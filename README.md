@@ -50,7 +50,7 @@ python -m transcriber.cli sample.wav --backend mock            # no model downlo
 
 # Service
 uvicorn transcriber.api:app --port 8000
-curl -F file=@meeting.mp3 "localhost:8000/transcribe?format=json"
+curl -F file=@speech.m4a "localhost:8000/transcribe?format=json"
 curl -F file=@2h_podcast.mp3 localhost:8000/jobs               # -> {"job_id": "..."}
 curl localhost:8000/jobs/<job_id>                              # status + progress + result
 curl "localhost:8000/jobs/<job_id>?format=srt"
